@@ -1,5 +1,10 @@
 const numbers = [1, 5, 8, 4, 7, 8, 25, 1];
 
+const findNumber = numbers.find(function (n) {
+  return n > 50;
+});
+
+console.log(findNumber);
 // numbers.forEach(function (element, index, array) {
 //   console.log(element);
 //   console.log(index);
@@ -21,6 +26,13 @@ const players = [
   { id: 'player-5', name: 'Apple', timePlayed: 45, points: 96, online: false },
 ];
 
+const findNamePlayer = 'Lemon';
+const player = players.find(function (player) {
+  return player.name === findNamePlayer;
+});
+
+console.log(player);
+
 // const mappedPlayers = players.map(player => player.points);
 
 // console.log(mappedPlayers);
@@ -34,13 +46,13 @@ const players = [
 // });
 // console.table(updatePlayers);
 
-const newPlayer = 'player-3';
+// const newPlayer = 'player-3';
 
-const findToPlayer = players.map(function (player) {
-  console.log(player.id);
-  if (player.id === newPlayer) {
-    return { ...player, timePlayed: player.timePlayed + 1500 };
-  }
-  return player;
-});
-console.table(findToPlayer);
+// const findToPlayer = players.map(function (player) {
+//   console.log(player.id);
+//   if (player.id === newPlayer) {
+//     return { ...player, timePlayed: player.timePlayed + 1500 };
+//   }
+//   return player;
+// });
+// console.table(findToPlayer);

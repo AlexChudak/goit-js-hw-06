@@ -61,7 +61,13 @@ console.log(getUsersWithAge(users, 30, 40));
 //Задача№7 Получить общую сумму баланса (поле balance) всех пользователей.
 
 const calculateTotalBalance = users => {
-  // твой код
+  return users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
 };
 
 console.log(calculateTotalBalance(users)); // 20916
+
+//Задача№8 Массив имен всех пользователей у которых есть друг с указанным именем.
+const getUsersWithFriend = (users, friendName) => {};
+
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
