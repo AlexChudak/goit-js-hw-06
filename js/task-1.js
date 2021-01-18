@@ -20,9 +20,14 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 
 //Задача №3 Получить массив имен пользователей по полу (поле gender).
 const getUsersWithGender = (users, gender) => {
-  return users.filter(function (user) {
-    return user.gender === gender;
-  });
+  return (
+    users
+      // .filter(function (user) {
+      //   return user.gender === gender;
+      // })
+      .filter(user => user.gender === gender)
+      .map(user => user.name)
+  );
 };
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
@@ -67,7 +72,26 @@ const calculateTotalBalance = users => {
 console.log(calculateTotalBalance(users)); // 20916
 
 //Задача№8 Массив имен всех пользователей у которых есть друг с указанным именем.
-const getUsersWithFriend = (users, friendName) => {};
+const getUsersWithFriend = (users, friendName) => {
+  // return users.filter(function (user) {
+  //   if (user.friends.includes(friendName)) {
+  //     return user.name;
+  //   }
+  // });
+  return users
+    .filter(user => user.friends.includes(friendName))
+    .map(user => user.name);
+};
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+//Задача№9 Массив имен (поле name) людей,
+//отсортированных в зависимости от количества их друзей(поле friends)
+
+const getNamesSortedByFriendsCount = users => {
+  // твой код
+};
+
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
